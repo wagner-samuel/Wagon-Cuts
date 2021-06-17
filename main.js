@@ -6,12 +6,14 @@ var timeoutId = setTimeout(function () {
 
 $.get("https://showy-dynamic-icebreaker.glitch.me/movies", {
 }).done(function(data) {
-    data.forEach(function (obj) {
-        $('.movieList').append(movieCards(obj))
-    })
-    console.log( data);
+    data.forEach(function (data) {
+        $('.movieList').append(movieCards(data))
 
-});
+            })
+        }
+    )
+
+
 
 function movieCards(data) {
     let paddy = $(`<div class="card"></div>`);
@@ -19,15 +21,16 @@ function movieCards(data) {
     paddy.append(
         `<div>
 </div>
+<h2 class="title">Title: ${data.title}</h2>
+<img src="${data.poster}" alt="">
+<div class="rating">Rating: ${data.rating}</div>
+<div class="year">Year: ${data.year}</div>
+<div class="genre">Genre: ${data.genre}</div>
+<div class="genre">Director: ${data.director}</div>
+<div class="genre">Plot: ${data.plot}</div>
+<div class="genre">Actor: ${data.actors}</div>
 <hr>
-<div class="temperature">Temperature: ${data.temperature} F</div>
-<hr>
-<div class="description">${data.description}</div>
-		<hr>
-		<div class="humidity">Humidity: ${data.humidity}</div>
-			<hr>
-			<div class="countryCode">Country Code: ${data.country}</div>
-	</div>`
+`
     )
     return paddy
 }
