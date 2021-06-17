@@ -3,33 +3,34 @@ var timeoutId = setTimeout(function () {
     $(".loadingMessage").text("These are our movies")
 }, delay);
 
-fetch('https://showy-dynamic-icebreaker.glitch.me/movies') // make a request - GET
-    .then(response => response.json())
-    .then(data => {
-        console.log(data); //
-        toTheMoon(myLoopFunction(data))
-    })
-    .catch(error => {
-        alert(error);
-        console.error(error);
-    })
+// fetch('https://showy-dynamic-icebreaker.glitch.me/movies') // make a request - GET
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log(data); //
+//         toTheMoon(myLoopFunction(data))
+//     })
+//     .catch(error => {
+//         alert(error);
+//         console.error(error);
+//     })
 
-function myLoopFunction(data) {
-    console.log(data)
-    let obj = [];
-    for (let i = 0; i < data.length; i++) {
-        if (i % 4 === 0) {
-            obj.push({
-                actor: data.actor,
-                genre: data.genre,
-                title: data.title,
-                year: data.year,
-            })
-        }
-    }
-    console.log(obj)
-    return obj
-}
+// function myLoopFunction(data) {
+//     console.log(data)
+//     let obj = [];
+//     for (let i = 0; i < data.length; i++) {
+//         if (i % 4 === 0) {
+//             obj.push({
+//                 actor: data.actor,
+//                 genre: data.genre,
+//                 title: data.title,
+//                 year: data.year,
+//             })
+//         }
+//     }
+//     console.log(obj)
+//     return obj
+// }
+
 
 function toTheMoon(data) {
     data.forEach(function (obj) {
