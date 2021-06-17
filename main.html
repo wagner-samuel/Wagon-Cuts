@@ -8,10 +8,22 @@
         <title>Document</title>
     </head>
     <body>
+        <h3>Add New Movie</h3>
+        <div>
+            <input id="inputTitle" type="text" placeholder="Title">
+            <input id="inputRating" type="text" placeholder="Rating">
+            <input id="inputPoster" type="text" placeholder="Poster">
+            <input id="inputYear" type="text" placeholder="Year">
+            <input id="inputGenre" type="text" placeholder="Genre">
+            <input id="inputDirector" type="text" placeholder="Director">
+            <textarea id="inputPlot" type="text" placeholder="Plot" rows="4"></textarea>
+            <input id="inputActors" type="text" placeholder="Actors">
+        </div>
         <header class="loadingMessage">Loading...</header>
         <div class="movieList"></div>
         <div class="posterImages"></div>
         <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script src="post-data.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
