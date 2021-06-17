@@ -3,16 +3,15 @@ var timeoutId = setTimeout(function () {
     $(".loadingMessage").text("These are our movies")
 }, delay);
 
-// fetch('https://showy-dynamic-icebreaker.glitch.me/movies') // make a request - GET
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data); //
-//         toTheMoon(myLoopFunction(data))
-//     })
-//     .catch(error => {
-//         alert(error);
-//         console.error(error);
-//     })
+fetch('https://showy-dynamic-icebreaker.glitch.me/movies') // make a request - GET
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); //
+    })
+    .catch(error => {
+        alert(error);
+        console.error(error);
+    })
 
 // function myLoopFunction(data) {
 //     console.log(data)
