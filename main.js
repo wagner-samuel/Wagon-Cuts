@@ -1,21 +1,43 @@
 var delay = 1500;
 var timeoutId = setTimeout(function () {
-    $(".loadingMessage").text("These are our movies")
+    $(".loadingMessage").text(`We have a great selection of movies!`)
     // $(".loadingMessage").append(${data})
 }, delay);
+
+$.get("https://showy-dynamic-icebreaker.glitch.me/movies", {
+}).done(function(data) {
+    data.forEach(function (obj) {
+        $('.movieList').append(movieCards(obj))
+    })
+    console.log( data);
+
+});
+
+function movieCards(data) {
+    let paddy = $(`<div class="card"></div>`);
+
+    paddy.append(
+        `<div>
+</div>
+<hr>
+<div class="temperature">Temperature: ${data.temperature} F</div>
+<hr>
+<div class="description">${data.description}</div>
+		<hr>
+		<div class="humidity">Humidity: ${data.humidity}</div>
+			<hr>
+			<div class="countryCode">Country Code: ${data.country}</div>
+	</div>`
+    )
+    return paddy
+}
 
 
 const url = 'https://showy-dynamic-icebreaker.glitch.me/movies';
 
-function showValues() {
-    var str = $( "form" ).serialize();
-    console.log(str)
-    $( "#results" ).text( str );
-}
-
-
 // // ---- notes
 $(".subitBTN").click(makePost);
+
 
 function getInputVals (){
     let newMovie = {
@@ -52,4 +74,7 @@ fetch(url, options)
     // fetch request
     // .. then ...
 }
+
+
+
 
