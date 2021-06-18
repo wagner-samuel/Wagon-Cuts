@@ -73,6 +73,9 @@ $.get(url, {}).done(function (data) {
         $(`.edit${data.id}`).click(function () {
             fetch(`https://showy-dynamic-icebreaker.glitch.me/movies/${data.id}`,{
                 method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify ({
                     title: $(`#inputTitle`).val(),
                     rating: $(`#inputRating`).val(),
