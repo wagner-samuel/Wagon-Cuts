@@ -6,31 +6,42 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+              crossorigin="anonymous">
     </head>
     <body>
+        <div class="text-center">
+            <img class="img-fluid img-thumbnail" alt="Responsive image" src="Blockbuster.jpg">
+        </div>
 
         <h3>Add New Movie</h3>
         <form class=inputFields" action="">
-        <div>
-            <input id="inputTitle" type="text" name="test" placeholder="Title">
-            <input id="inputRating" type="text" placeholder="Rating">
-            <input id="inputPoster" type="text" placeholder="Add movie image link(should end in .jpg)" size="50">
-            <input id="inputYear" type="text" placeholder="Year">
-            <input id="inputGenre" type="text" placeholder="Genre">
-            <input id="inputDirector" type="text" placeholder="Director">
-            <br>
-            <textarea id="inputPlot"  placeholder="Plot" rows="4"></textarea>
-            <textarea id="inputActors" placeholder="Actors" rows="4"></textarea>
-        </div>
-            <button class="submitBTN" type="button" >Add me!</button>
-<!--            <button class="deleteBTN" type="button">Delete</button>-->
+            <div>
+                <input id="inputTitle" type="text" name="test" placeholder="Title">
+                <input id="inputRating" type="text" placeholder="Rating">
+                <input id="inputPoster" type="text" placeholder="Add movie image link(should end in .jpg)" size="50">
+                <input id="inputYear" type="text" placeholder="Year">
+                <input id="inputGenre" type="text" placeholder="Genre">
+                <input id="inputDirector" type="text" placeholder="Director">
+                <br>
+                <textarea id="inputPlot" placeholder="Plot" rows="4"></textarea>
+                <textarea id="inputActors" placeholder="Actors" rows="4"></textarea>
+            </div>
+            <button class="submitBTN" type="button">Add me!</button>
+            <!--            <button class="deleteBTN" type="button">Delete</button>-->
         </form>
+        <div class="rocketAnimation">
+            <label for="rocketMan">Wait!!! I'm still loading!</label>
+            <img class="loadingMessage" src="Rocket.gif" id="rocketMan" alt="">
+        </div>
 
-        <h1 class="loadingMessage">Loading...</h1>
-
-        <div class="movieList"></div>
+        <div class="movieList px auto"></div>
         <div class="posterImages"></div>
+
         <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="main.js"></script>
+        <script src="main.css"></script>
     </body>
 </html>
