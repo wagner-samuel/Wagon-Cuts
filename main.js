@@ -3,7 +3,7 @@ const url = 'https://showy-dynamic-icebreaker.glitch.me/movies';
 $(".submitBTN").click(makePost);
 
 function getInputVals() {
-    let newMovie = {
+    return {
         title: $(`#inputTitle`).val(),
         rating: $(`#inputRating`).val(),
         poster: $(`#inputPoster`).val(),
@@ -13,7 +13,6 @@ function getInputVals() {
         plot: $(`#inputPlot`).val(),
         actors: $(`#inputActors`).val()
     };
-    return newMovie;
 }
 
 // $(`.deleteBTN`).click(function () {
@@ -71,6 +70,26 @@ $.get(url, {}).done(function (data) {
                 })
                 .catch(error => console.error(error))
         })
+        $(`.edit${data.id}`).click(function () {
+            fetch(`https://showy-dynamic-icebreaker.glitch.me/movies/${data.id}`,{
+                method: 'PUT',
+                body: JSON.stringify ({
+                    title: $(`#inputTitle`).val(),
+                    rating: $(`#inputRating`).val(),
+                    poster: $(`#inputPoster`).val(),
+                    year: $(`#inputYear`).val(),
+                    genre: $(`#inputGenre`).val(),
+                    director: $(`#inputDirector`).val(),
+                    plot: $(`#inputPlot`).val(),
+                    actors: $(`#inputActors`).val()
+                })
+            })
+                .then(response => console.log(response))
+                .then(function (html) {
+                    location.reload();
+                })
+                .catch(error => console.error(error))
+        })
     })
 })
 
@@ -91,6 +110,7 @@ function movieCards(data) {
 <div class="genre">Plot: ${data.plot}</div>
 <div class="genre">Actor: ${data.actors}</div>
 <button class='delete${data.id}'>Delete</button>
+<button class="edit${data.id}">Edit</button>
 <hr>
 `
     )
