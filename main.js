@@ -15,25 +15,6 @@ function getInputVals() {
     };
 }
 
-// $(`.deleteBTN`).click(function () {
-//     $.get(url, {}).done(function (data) {
-//         delete data[data.length - 1]
-//         // console.log(data)
-//     }).done(function (data) {
-//         // $.get(url).done(function(data){})
-//         console.log(data)
-//         $.post(url, data)
-//     }).done(function () {
-//         location.reload();
-//     })
-// })
-
-// notes
-
-
-
-//
-
 function makePost() {
     const options = {
         method: 'POST',
@@ -53,8 +34,7 @@ function makePost() {
 
 var delay = 1500;
 var timeoutId = setTimeout(function () {
-    $(".loadingMessage").text("Look at all these Movies")
-    // $(".loadingMessage").append(${data})
+    $(".rocketAnimation").fadeOut(3000);
 }, delay);
 
 $.get(url, {}).done(function (data) {
@@ -73,6 +53,9 @@ $.get(url, {}).done(function (data) {
         $(`.edit${data.id}`).click(function () {
             fetch(`https://showy-dynamic-icebreaker.glitch.me/movies/${data.id}`,{
                 method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify ({
                     title: $(`#inputTitle`).val(),
                     rating: $(`#inputRating`).val(),
@@ -93,16 +76,13 @@ $.get(url, {}).done(function (data) {
     })
 })
 
-
-
 function movieCards(data) {
     let paddy = $(`<div class="card"></div>`);
 
     paddy.append(
-        `<div>
-</div>
+        `<div d flex>
 <h2 class="title">Title: ${data.title}</h2>
-<img src="${data.poster}" alt="" height="350px">
+<img class="picture text center" src="${data.poster}" alt="" height="350px" width="200px">
 <div class="rating">Rating: ${data.rating}</div>
 <div class="year">Year: ${data.year}</div>
 <div class="genre">Genre: ${data.genre}</div>
@@ -112,14 +92,27 @@ function movieCards(data) {
 <button class='delete${data.id}'>Delete</button>
 <button class="edit${data.id}">Edit</button>
 <hr>
+</div>
+
 `
     )
     return paddy
 }
 
-
 // // ---- notes
 
+//delete method
+// function deletePost(movieid){
+//     fetch(`https://showy-dynamic-icebreaker.glitch.me/movies${movieid}`,{
+//         method: "DELETE",
+//     })
+//         .then(response => console.log(response))
+//         .then(function (){
+//             location.reload()
+//         })
+//         .catch(error => console.error(error))
+// }
+//add to movieCards {<button class="deleteBTN" type="button" onclick="deletePost(${data.id}" data-id="${data.id}">Get Out Of Here!</button>
 
 
 
