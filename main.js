@@ -1,7 +1,8 @@
 const url = 'https://showy-dynamic-icebreaker.glitch.me/movies';
 
 $(".submitBTN").click(makePost);
-function getInputVals (){
+
+function getInputVals() {
     let newMovie = {
         title: $(`#inputTitle`).val(),
         rating: $(`#inputRating`).val(),
@@ -15,7 +16,26 @@ function getInputVals (){
     return newMovie;
 }
 
-function makePost(){
+// $(`.deleteBTN`).click(function () {
+//     $.get(url, {}).done(function (data) {
+//         delete data[data.length - 1]
+//         // console.log(data)
+//     }).done(function (data) {
+//         // $.get(url).done(function(data){})
+//         console.log(data)
+//         $.post(url, data)
+//     }).done(function () {
+//         location.reload();
+//     })
+// })
+
+// notes
+
+
+
+//
+
+function makePost() {
     const options = {
         method: 'POST',
         headers: {
@@ -25,26 +45,34 @@ function makePost(){
     };
     console.log(getInputVals())
     fetch(url, options)
-        .then( response => console.log(response))
-        .catch( error => console.error(error))
-        .then(function(html){
+        .then(response => console.log(response))
+        .catch(error => console.error(error))
+        .then(function (html) {
             location.reload();
         });
 }
+
 var delay = 1500;
 var timeoutId = setTimeout(function () {
     $(".loadingMessage").text("Look at all these Movies")
     // $(".loadingMessage").append(${data})
 }, delay);
 
-$.get(url, {
-}).done(function(data) {
+$.get(url, {}).done(function (data) {
     data.forEach(function (data) {
         $('.movieList').append(movieCards(data))
-
+        $(`.delete${data.id}`).click(function () {
+            fetch(`https://showy-dynamic-icebreaker.glitch.me/movies/${data.id}`,{
+                method: 'DELETE'
             })
-        }
-    )
+                .then(response => console.log(response))
+                .then(function (html) {
+                    location.reload();
+                })
+                .catch(error => console.error(error))
+        })
+    })
+})
 
 
 
@@ -55,13 +83,14 @@ function movieCards(data) {
         `<div>
 </div>
 <h2 class="title">Title: ${data.title}</h2>
-<img src="${data.poster}" alt="">
+<img src="${data.poster}" alt="" height="350px">
 <div class="rating">Rating: ${data.rating}</div>
 <div class="year">Year: ${data.year}</div>
 <div class="genre">Genre: ${data.genre}</div>
 <div class="genre">Director: ${data.director}</div>
 <div class="genre">Plot: ${data.plot}</div>
 <div class="genre">Actor: ${data.actors}</div>
+<button class='delete${data.id}'>Delete</button>
 <hr>
 `
     )
