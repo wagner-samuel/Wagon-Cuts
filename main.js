@@ -97,7 +97,7 @@ secondScript()
                     paddy.append(
                         `<div>
 <h2 class="p-3 mb-2 bg-secondary text-white">Title:${data.title}</h2>
-<img class="picture text center" src="${data.poster}" alt="" height="350px" width="200px">
+<img class="picture text center" src="${data.poster}" alt="" height="350px" width="250px">
 <div class="rating ">Rating: ${data.rating}</div>
 <div class="year">Year: ${data.year}</div>
 <div class="genre">Genre: ${data.genre}</div>
