@@ -9,28 +9,64 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
               integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
               crossorigin="anonymous">
+
     </head>
     <body>
-        <div class="text-center">
-            <img class="img-fluid img-thumbnail" alt="Responsive image" src="Blockbuster.jpg">
-        </div>
+<!--        <div class="text-center">-->
+<!--            <img class="img-fluid img-thumbnail" alt="Responsive image" src="Blockbuster.jpg">-->
+<!--        </div>-->
+<!--        Modal box start-->
+<!--         Trigger/Open The Modal -->
+<!--        <button class="btn btn-primary btn-lg btn-block" id="myBtn">Post your movie!</button>-->
+<div id="myBtn"></div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-        <h3>Add New Movie</h3>
-        <form class=inputFields" action="">
-            <div>
-                <input id="inputTitle" type="text" name="test" placeholder="Title">
-                <input id="inputRating" type="text" placeholder="Rating">
-                <input id="inputPoster" type="text" placeholder="Add movie image link(should end in .jpg)" size="50">
-                <input id="inputYear" type="text" placeholder="Year">
-                <input id="inputGenre" type="text" placeholder="Genre">
-                <input id="inputDirector" type="text" placeholder="Director">
-                <br>
-                <textarea id="inputPlot" placeholder="Plot" rows="4"></textarea>
-                <textarea id="inputActors" placeholder="Actors" rows="4"></textarea>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form class="inputFields" action="">
+                    <div>
+                        <label for="inputTitle"></label><input id="inputTitle" type="text" name="test" placeholder="Title">
+                        <label for="inputRating"></label>
+                        <input id="inputRating" type="text" placeholder="Rating">
+                        <label for="inputPoster"></label>
+                        <input id="inputPoster" type="text" placeholder="Add movie image link(should end in .jpg)" size="50">
+                        <label for="inputYear"></label>
+                        <input id="inputYear" type="text" placeholder="Year">
+                        <label for="inputGenre"></label>
+                        <input id="inputGenre" type="text" placeholder="Genre">
+                        <label for="inputDirector"></label>
+                        <input id="inputDirector" type="text" placeholder="Director">
+                        <br>
+                        <label for="inputPlot"></label><textarea id="inputPlot" placeholder="Plot" rows="4"></textarea>
+                        <label for="inputActors"></label><textarea id="inputActors" placeholder="Actors" rows="4"></textarea>
+                    </div>
+                    <button class="submitBTN" type="button">Add me!</button>
+                    <!--            <button class="deleteBTN" type="button">Delete</button>-->
+                </form>
+
             </div>
-            <button class="submitBTN" type="button">Add me!</button>
-            <!--            <button class="deleteBTN" type="button">Delete</button>-->
-        </form>
+
+        </div>
+<!--        Modal box end-->
+
+<!--        <h3>Add New Movie</h3>-->
+<!--        <form class=inputFields" action="">-->
+<!--            <div>-->
+<!--                <input id="inputTitle" type="text" name="test" placeholder="Title">-->
+<!--                <input id="inputRating" type="text" placeholder="Rating">-->
+<!--                <input id="inputPoster" type="text" placeholder="Add movie image link(should end in .jpg)" size="50">-->
+<!--                <input id="inputYear" type="text" placeholder="Year">-->
+<!--                <input id="inputGenre" type="text" placeholder="Genre">-->
+<!--                <input id="inputDirector" type="text" placeholder="Director">-->
+<!--                <br>-->
+<!--                <textarea id="inputPlot" placeholder="Plot" rows="4"></textarea>-->
+<!--                <textarea id="inputActors" placeholder="Actors" rows="4"></textarea>-->
+<!--            </div>-->
+<!--            <button class="submitBTN" type="button">Add me!</button>-->
+<!--            &lt;!&ndash;            <button class="deleteBTN" type="button">Delete</button>&ndash;&gt;-->
+<!--        </form>-->
         <div class="rocketAnimation">
             <label for="rocketMan">Wait!!! I'm still loading!</label>
             <img class="loadingMessage" src="Rocket.gif" id="rocketMan" alt="">
@@ -41,7 +77,7 @@
 
         <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        <script src="main.js"></script>
         <script src="main.css"></script>
+        <script src="main.js"></script>
     </body>
 </html>
