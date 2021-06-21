@@ -65,7 +65,8 @@ secondScript()
                                 })
                                 .catch(error => console.error(error))
                         })
-                        $(`.edit${data.id}`).click(function () {
+
+                            $(`.edit${data.id}`).click(function () {
                             fetch(`https://showy-dynamic-icebreaker.glitch.me/movies/${data.id}`, {
                                 method: 'PUT',
                                 headers: {
@@ -96,8 +97,9 @@ secondScript()
 
                     paddy.append(
                         `<div>
-<h2 class="p-3 mb-2 bg-secondary text-white">Title:${data.title}</h2>
-<img class="picture text center" src="${data.poster}" alt="" height="350px" width="250px">
+   
+<h2 class="p-3 mb-2 bg-secondary text-white">Title: ${data.title}</h2>
+<img class="picture " src="${data.poster}" alt="" height="350px" width="250px">
 <div class="rating ">Rating: ${data.rating}</div>
 <div class="year">Year: ${data.year}</div>
 <div class="genre">Genre: ${data.genre}</div>
@@ -107,6 +109,10 @@ secondScript()
 <button class="delete${data.id}">Delete</button>
 <button class="edit${data.id}">Edit</button>
 <hr>
+ <div class="w-100"></div>
+  
+  </div>
+</div>
 </div>
 `
                     )
