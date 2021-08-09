@@ -1,4 +1,5 @@
-const url = 'https://showy-dynamic-icebreaker.glitch.me/movies';
+// const url = 'https://showy-dynamic-icebreaker.glitch.me/movies';
+const url =     'http://localhost:8080/movies';
 
 firstScript()
 
@@ -164,3 +165,5 @@ secondScript()
 
             }, delay);
         }
+
+git add .; git commit -m "master_db_create_script";git push origin helloMoto
